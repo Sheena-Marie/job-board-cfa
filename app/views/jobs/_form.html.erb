@@ -2,29 +2,35 @@
   <%= f.error_notification %>
 
   <div class="form-inputs col-md-12">
-    <%= f.input :company_name %>
+    <%= f.input :company_name, label: 'Enter the company name:', required: true, placeholder: 'Company Name' %>
   </div>
+
   <div class="form-inputs col-md-6">
-    <%= f.input :job_type, label: 'Choose the type of job', collection: ['Web Page', 'Web App', 'Other']%>
+    <%= f.input :job_type, label: 'Choose the type of job', collection: ['Web Page', 'Web App', 'Other'], required: true %>
   </div>
+
   <div class="form-inputs col-md-6">
-    <%= f.input :time_to_complete %>
+    <%= f.date_field :time_to_complete, label: 'Due Date', required: true %>
   </div>
+
   <div class="form-inputs col-md-12">
-  <%= f.input :urgent %>
+  <%= f.input :urgent, label: 'Is this urgent?' %>
   </div>
+
   <div class="form-inputs col-md-9">
   <%= f.input :contact_info %>
   </div>
+
   <div class="form-inputs col-md-2">
-  <%= f.input :price %>
+  <%= f.input :price, placeholder: '$' %>
   </div>
+
   <div class="form-inputs col-md-12">
   <%= f.input :description %>
   </div>
 
-
-  <div class="form-actions">
+  <div class="form-actions col-md-1">
     <%= f.button :submit %>
   </div>
 <% end %>
+<br>

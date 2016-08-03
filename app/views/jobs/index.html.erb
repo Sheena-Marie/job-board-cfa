@@ -5,13 +5,13 @@
 <table>
   <thead>
     <tr>
-      <th>Company name</th>
-      <th>Job type</th>
-      <th>Time to complete</th>
+      <th>Company Name</th>
+      <th>Job Type</th>
+      <th>Due</th>
       <th>Urgent</th>
-      <th>Contact info</th>
-      <th>Price</th>
-      <th>Description</th>
+      <th>Contact Info</th>
+      <th>Payment</th>
+      <th>Job Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,10 +24,10 @@
         <td><%= job.time_to_complete %></td>
         <td><%= job.urgent %></td>
         <td><%= job.contact_info %></td>
-        <td><%= job.price %></td>
-        <td><%= job.description %></td>
+        <td><%= number_to_currency(job.price) %></td>
+        <td><%= truncate(job.description, :length => 50) %></td>
         <td><%= link_to 'Show', job %></td>
-        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <!-- <td><%= link_to 'Edit', edit_job_path(job) %></td> -->
         <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
