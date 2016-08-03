@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company_name: MyString
+  job_type: MyString
+  time_to_complete: 1
+  urgent: false
+  contact_info: MyString
+  price: 1
+  description: MyString
+
+two:
+  company_name: MyString
+  job_type: MyString
+  time_to_complete: 1
+  urgent: false
+  contact_info: MyString
+  price: 1
+  description: MyString

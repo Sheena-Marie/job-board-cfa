@@ -1,0 +1,30 @@
+<%= simple_form_for(@job) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs col-md-12">
+    <%= f.input :company_name %>
+  </div>
+  <div class="form-inputs col-md-6">
+    <%= f.input :job_type, label: 'Choose the type of job', collection: ['Web Page', 'Web App', 'Other']%>
+  </div>
+  <div class="form-inputs col-md-6">
+    <%= f.input :time_to_complete %>
+  </div>
+  <div class="form-inputs col-md-12">
+  <%= f.input :urgent %>
+  </div>
+  <div class="form-inputs col-md-9">
+  <%= f.input :contact_info %>
+  </div>
+  <div class="form-inputs col-md-2">
+  <%= f.input :price %>
+  </div>
+  <div class="form-inputs col-md-12">
+  <%= f.input :description %>
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
