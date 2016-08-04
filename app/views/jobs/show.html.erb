@@ -1,39 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Company Name:</strong>
-  <%= @job.company_name %>
-</p>
+<div class="border">
+  <p>
+    <strong>Company Name:</strong>
+    <%= @job.company_name %>
+  </p>
 
-<p>
-  <strong>Job Type:</strong>
-  <%= @job.job_type %>
-</p>
+  <p>
+    <strong>Job Type:</strong>
+    <%= @job.job_type %>
+  </p>
 
-<p>
-  <strong>Due:</strong>
-  <%= @job.time_to_complete %>
-</p>
+  <p>
+    <strong>Due:</strong>
+    <%= time_tag(@job.due_date) %>
+  </p>
 
-<p>
-  <strong>Urgent:</strong>
-  <%= @job.urgent %>
-</p>
+  <p>
+    <strong>Urgent:</strong>
+    <%= @job.urgent %>
+  </p>
 
-<p>
-  <strong>Contact Info:</strong>
-  <%= @job.contact_info %>
-</p>
+  <p>
+    <strong>Contact Info:</strong>
+    <%= @job.contact_info %>
+  </p>
 
-<p>
-  <strong>Payment:</strong>
-  <%= number_to_currency(@job.price, :unit => '$') %>
-</p>
+  <p>
+    <strong>Payment:</strong>
+    <%= number_to_currency(@job.price, :unit => '$', :precision => 2) %>
+  </p>
 
-<p>
-  <strong>Job Description:</strong>
-  <%= @job.description %>
-</p>
+  <p>
+    <strong>Job Description:</strong>
+    <%= @job.description %>
+  </p>
+</div>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<div class="row formbtn">
+  <div class="col-md-6">
+    <%= link_to 'Edit', edit_job_path(@job), class: 'btn btn-warning btn-lg' %>
+  </div>
+  <div class="col-md-6">
+    <%= link_to 'Back', jobs_path, class: 'btn btn-warning btn-lg' %>
+  </div>
+</div>

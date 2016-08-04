@@ -1,17 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Jobs</h1>
+<h1>Available Jobs</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Company Name</th>
+      <th>Client Name</th>
       <th>Job Type</th>
       <th>Due</th>
       <th>Urgent</th>
-      <th>Contact Info</th>
       <th>Payment</th>
-      <th>Job Description</th>
+      <th >Job Description</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,16 +18,15 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.company_name %></td>
-        <td><%= job.job_type %></td>
-        <td><%= job.time_to_complete %></td>
-        <td><%= job.urgent %></td>
-        <td><%= job.contact_info %></td>
-        <td><%= number_to_currency(job.price) %></td>
-        <td><%= truncate(job.description, :length => 50) %></td>
-        <td><%= link_to 'Show', job %></td>
+        <td class="border2"><%= job.company_name %></td>
+        <td class="border2"><%= job.job_type %></td>
+        <td class="border2"><%= time_tag(job.due_date) %></td>
+        <td class="border2"><%= job.urgent %></td>
+        <td class="border2"><%= number_to_currency(job.price) %></td>
+        <td class="border2"><%= truncate(job.description, :length => 50) %></td>
+        <td class="border2"><%= link_to 'View Job', job, class: 'btn btn-lg btn-success' %></td>
         <!-- <td><%= link_to 'Edit', edit_job_path(job) %></td> -->
-        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="border2"><%= link_to 'Delete Job', job, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-lg btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Job', new_job_path %>
+<%= link_to 'Add Job', new_job_path, class: 'btn btn-lg btn-primary' %>
