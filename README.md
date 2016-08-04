@@ -4,12 +4,14 @@
 
 
 ### Ruby version
-- Rails 5.0.0
+- Rails 4.2.6
 - Ruby 2.3.1
 
 ### Gems Used:
 - Bootstrap-Sass
 - Simple Form
+- Font Awesome
+- Figaro
 
 ### Database Used:
 - PostgreSQL
